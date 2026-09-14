@@ -1,7 +1,7 @@
 name: Frontend quality
 on:
   push:
-    branches: [main, feat/frontend-stage-one]
+    branches: [main]
   pull_request:
     branches: [main]
 permissions:
@@ -22,6 +22,8 @@ jobs:
         run: npm install
       - name: Lint
         run: npm run lint
+      - name: Development smoke check
+        run: node scripts/check-dev.mjs
       - name: Production build
         run: npm run build
       - name: TypeScript

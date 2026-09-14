@@ -63,7 +63,7 @@ test("mobile menu, search, keyboard gallery and schedule",async({page})=>{
  await expect(page.getByRole("dialog")).toHaveCount(0);
  const photo=page.getByRole("button",{name:"Сүрөттү чоңойтуу: Билимге жол",exact:true});
  await photo.click();await expect(page.getByRole("dialog")).toBeVisible();
- await page.getByRole("button",{name:"Кийинки",exact:true}).click();
+ await page.keyboard.press("ArrowRight");
  await expect(page.locator(".lightbox-caption")).toContainText("2 /");
  await page.keyboard.press("Escape");await expect(page.getByRole("dialog")).toHaveCount(0);
  await expect(photo).toBeFocused();
