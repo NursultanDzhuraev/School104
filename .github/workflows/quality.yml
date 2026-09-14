@@ -1,0 +1,49 @@
+name: Frontend quality
+on:
+  push:
+    branches: [main, feat/frontend-stage-one]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: npm install
+      - name: Lint
+        run: npm run lint
+      - name: Production build
+        run: npm run build
+      - name: TypeScript
+        run: npm run typecheck
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Production browser checks
+        run: npm test
+      - name: Package reviewed source and resolved lockfile
+        if: success()
+        run: tar --exclude=.git --exclude=node_modules --exclude=.next --exclude=test-results --exclude=playwright-report -czf /tmp/school104-source.tar.gz .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: school104-source
+          path: /tmp/school104-source.tar.gz
+          retention-days: 30

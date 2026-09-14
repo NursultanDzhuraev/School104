@@ -1,0 +1,9 @@
+"use client";
+import { useState } from "react";
+import type { Locale, SchoolDocument, DocumentCategory } from "@/types";
+import { messages, formatDate } from "@/lib/i18n";
+import { Icon } from "@/components/ui/Icon";
+export function DocumentExplorer({items,locale}:{items:SchoolDocument[];locale:Locale}) {
+ const t=messages(locale);const [category,setCategory]=useState<DocumentCategory|"all">("all");const filtered=items.filter(item=>category==="all"||item.category===category);
+ return <><div className="filter-list" aria-label={t.documents.title}><button className={category==="all"?"chip active":"chip"} aria-pressed={category==="all"} onClick={()=>setCategory("all")}>{t.common.all}</button>{(Object.keys(t.documents.categories) as DocumentCategory[]).map(key=><button className={category===key?"chip active":"chip"} aria-pressed={category===key} key={key} onClick={()=>setCategory(key)}>{t.documents.categories[key]}</button>)}</div><div className="document-grid">{filtered.map(item=><article className="document-card" key={item.id}><div className="document-icon"><Icon name="file" size={34}/><span>PDF</span></div><div className="document-body"><span className="eyebrow">{t.documents.categories[item.category]}{item.demo?" · "+t.common.sample:""}</span><h2>{item.title[locale]}</h2><p><time dateTime={item.date}>{formatDate(item.date,locale)}</time> · {Math.max(1,Math.ceil(item.sizeBytes/1024))} KB</p><div className="actions"><a className="text-link" href={item.file} target="_blank" rel="noreferrer" aria-label={t.documents.view+": "+item.title[locale]}>{t.documents.view}<Icon name="external" size={16}/></a><a className="text-link" href={item.file} download aria-label={t.documents.download+": "+item.title[locale]}>{t.documents.download}<Icon name="download" size={16}/></a></div></div></article>)}</div>{!filtered.length&&<p className="empty-state" role="status">{t.common.empty}</p>}</>;
+}
