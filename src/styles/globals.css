@@ -336,7 +336,7 @@ td:first-child { color:var(--muted); }
  .news-body h3 { font-size:1.1rem; }
  .featured-news h3 { font-size:1.65rem; }
  .two-columns { gap:35px; }
- .photo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .photo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media(max-width:900px) {
  .desktop-navigation,.header-contact { display:none; }

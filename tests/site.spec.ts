@@ -32,6 +32,7 @@ for(const locale of ["kg","ru"] as const){
    for(const path of sections){
     await page.goto("/"+locale+path);await page.locator("main h1").waitFor();
     expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth),path+" overflows").toBeTruthy();
+    if(path==="/gallery")expect(await page.locator(".photo-grid").evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(" ").length)).toBe(width>=1440?4:2);
    }
    await page.goto("/"+locale);await page.screenshot({path:"test-results/"+locale+"-home-"+width+".png",fullPage:true});
   });
