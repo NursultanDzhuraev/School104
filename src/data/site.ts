@@ -15,7 +15,7 @@ export const school = {
   ],
 };
 export const imagery = {
-  campus: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1",
+  campus: "https://images.unsplash.com/photo-1565734777784-6e89609ed871?ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=80&w=1000",
   classroom: "https://images.unsplash.com/photo-1509062522246-3755977927d7",
   library: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b",
 };

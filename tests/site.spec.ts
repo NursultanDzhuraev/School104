@@ -9,7 +9,7 @@ test("root redirects and unknown locale / news return 404",async({page,request})
 });
 for(const locale of ["kg","ru"] as const){
  test(locale+" pages, metadata, assets and internal links",async({page,request})=>{
-  const errors:string[]=[];page.on("pageerror",e=>errors.push(e.message));page.on("console",message=>{if(message.type()==="error")errors.push(message.text());});
+  const errors:string[]=[];page.on("pageerror",e=>errors.push(page.url()+": "+e.message));page.on("console",message=>{if(message.type()==="error")errors.push(page.url()+": "+message.text());});
   const paths=[...sections,...news.map(item=>"/news/"+item.slug)];const targets=new Set<string>();
   for(const path of paths){
    const response=await page.goto("/"+locale+path);expect(response?.status(),path).toBe(200);

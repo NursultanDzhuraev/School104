@@ -121,7 +121,7 @@ Demo режиминде robots/noindex иштейт жана sitemap бош. Б�
 ## Сүрөттөр жана видео
 
 Дизайн референстеринин тиркемелери бул иш чөйрөсүндө ачылган жок. Түзүм жана green/gold/white багыты тексттик тапшырма боюнча аткарылды. Баштапкы сүрөттөр Unsplash'тагы иллюстрациялык материалдар, мектеп №104 деп ырасталбайт:
-- https://images.unsplash.com/photo-1523050854058-8df90110c9f1
+- https://images.unsplash.com/photo-1565734777784-6e89609ed871?ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=80&w=1000
 - https://images.unsplash.com/photo-1509062522246-3755977927d7
 - https://images.unsplash.com/photo-1503676260728-1c00da094a0b
 

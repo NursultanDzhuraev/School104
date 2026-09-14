@@ -5,6 +5,10 @@ import { requireLocale, messages } from "@/lib/i18n";
 import { content } from "@/lib/content";
 import { school } from "@/data/site";
 import { locales } from "@/types";
+export async function generateMetadata({params}:{params:Promise<{locale:string}>}) {
+ const locale=requireLocale((await params).locale);
+ return {title:{default:school.name[locale],template:"%s — "+school.shortName[locale]}};
+}
 export const dynamicParams = false;
 export function generateStaticParams() { return locales.map(locale=>({locale})); }
 export default async function LocaleLayout({children,params}:{children:React.ReactNode;params:Promise<{locale:string}>}) {

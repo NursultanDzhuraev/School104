@@ -186,6 +186,7 @@ ul,ol { padding:0; list-style:none; margin:0; }
 .team-card>div:last-child { padding:23px; }
 .team-card p { margin-top:10px; font-size:.9rem; }
 .schedule-controls { display:flex; gap:22px; margin-bottom:24px; }
+.schedule-control { display:flex; gap:12px; align-items:center; }
 .schedule-controls label { display:flex; gap:12px; align-items:center; font-size:.9rem; }
 select { padding:10px 40px 10px 14px; border:1px solid #d2ddd3; background:white; border-radius:7px; color:var(--green); min-height:44px; }
 .table-wrap { width:100%; border:1px solid var(--line); border-radius:12px; overflow:auto; }
@@ -489,6 +490,7 @@ td:first-child { color:var(--muted); }
  .gallery-photo>span svg { flex-shrink:0; width:14px; }
  th,td { padding:13px 7px; font-size:.76rem; }
  .schedule-controls { gap:13px; }
+ .schedule-control { flex-direction:column; align-items:start; gap:5px; }
  .schedule-controls label { flex-direction:column; align-items:start; gap:5px; }
  .schedule-controls select { padding-right:28px; }
  .lightbox-caption { gap:8px; }

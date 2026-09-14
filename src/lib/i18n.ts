@@ -7,5 +7,7 @@ export function requireLocale(value: string): Locale { if (!isLocale(value)) not
 export function messages(locale: Locale) { return locale === "kg" ? kg : ru; }
 export function localize(value: Localized, locale: Locale) { return value[locale]; }
 export function formatDate(value: string, locale: Locale) {
-  return new Intl.DateTimeFormat(locale === "kg" ? "ky-KG" : "ru-RU", {day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}).format(new Date(value + "T12:00:00Z"));
+  // Explicit month names keep server and browser output identical across ICU versions.
+  const [year, month, day] = value.split("-");
+  return Number(day) + " " + messages(locale).common.months[Number(month) - 1] + " " + year;
 }
