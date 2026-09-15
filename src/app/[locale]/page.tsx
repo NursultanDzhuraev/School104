@@ -42,7 +42,7 @@ export default async function Home({ params }: Props) {
             </h1>
             <p className="hero-intro">{t.home.intro}</p>
             <div className="actions">
-              <Link className="button" href={"/" + locale + "/about"}>
+              <Link className="button" href={"/" + locale + "/news"}>
                 {t.home.cta}
                 <Icon name="arrow" size={18} />
               </Link>

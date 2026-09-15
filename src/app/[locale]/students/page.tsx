@@ -6,7 +6,6 @@ import Link from "next/link";
 import { content } from "@/lib/content";
 import {
   clubs,
-  homework,
   exams,
   rules,
   usefulLinks,
@@ -47,12 +46,8 @@ export default async function Students({ params }: Props) {
       </section>
       <section className="section muted">
         <div className="container">
-          <SectionHeading title={t.students.homework} />
-          <CardGrid items={homework} locale={locale} />
-          <div className="section-gap">
-            <SectionHeading title={t.students.tests} />
-            <CardGrid items={exams} locale={locale} icons={["calendar"]} />
-          </div>
+          <SectionHeading title={t.students.tests} />
+          <CardGrid items={exams} locale={locale} icons={["calendar"]} />
         </div>
       </section>
       <section className="section">

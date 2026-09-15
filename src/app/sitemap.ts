@@ -7,9 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return locales.flatMap((locale) =>
     [
       "",
-      "/about",
       "/students",
-      "/parents",
       "/news",
       "/documents",
       "/gallery",

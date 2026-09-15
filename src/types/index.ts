@@ -16,7 +16,6 @@ export interface NewsItem {
 export type NewsCategory =
   | "school"
   | "events"
-  | "parents"
   | "students"
   | "teachers"
   | "community";

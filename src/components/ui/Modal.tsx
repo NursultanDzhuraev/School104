@@ -4,12 +4,14 @@ import { Icon } from "./Icon";
 export function Modal({
   label,
   closeLabel,
+  className = "",
   onClose,
   onKeyDown,
   children,
 }: {
   label: string;
   closeLabel: string;
+  className?: string;
   onClose: () => void;
   onKeyDown?: React.KeyboardEventHandler<HTMLDialogElement>;
   children: React.ReactNode;
@@ -30,7 +32,7 @@ export function Modal({
   return (
     <dialog
       ref={ref}
-      className="modal"
+      className={["modal", className].filter(Boolean).join(" ")}
       aria-label={label}
       onKeyDown={onKeyDown}
       onCancel={(event) => {

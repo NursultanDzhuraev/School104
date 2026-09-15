@@ -40,7 +40,7 @@ export function Footer({ locale }: { locale: Locale }) {
           <h3>{t.common.quickLinks}</h3>
           <ul className="footer-links">
             {(
-              ["about", "news", "documents", "gallery", "contacts"] as const
+              ["news", "documents", "gallery", "contacts"] as const
             ).map((key) => (
               <li key={key}>
                 <Link href={"/" + locale + "/" + key}>{t.nav[key]}</Link>
