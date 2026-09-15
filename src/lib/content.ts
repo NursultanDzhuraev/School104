@@ -6,7 +6,15 @@ import { gallery, videos } from "@/data/gallery";
 import { teachers } from "@/data/teachers";
 import { announcements } from "@/data/announcements";
 import { schedule } from "@/data/schedule";
-import type { NewsItem, SchoolDocument, GalleryPhoto, GalleryVideo, Teacher, Announcement, ClassSchedule } from "@/types";
+import type {
+  NewsItem,
+  SchoolDocument,
+  GalleryPhoto,
+  GalleryVideo,
+  Teacher,
+  Announcement,
+  ClassSchedule,
+} from "@/types";
 export interface ContentRepository {
   getNews(): Promise<NewsItem[]>;
   getNewsBySlug(slug: string): Promise<NewsItem | undefined>;
@@ -18,8 +26,8 @@ export interface ContentRepository {
   getSchedule(): Promise<ClassSchedule[]>;
 }
 export const content: ContentRepository = {
-  getNews: async () => [...news].sort((a,b)=>b.date.localeCompare(a.date)),
-  getNewsBySlug: async (slug) => news.find(item=>item.slug === slug),
+  getNews: async () => [...news].sort((a, b) => b.date.localeCompare(a.date)),
+  getNewsBySlug: async (slug) => news.find((item) => item.slug === slug),
   getDocuments: async () => documents,
   getGallery: async () => gallery,
   getVideos: async () => videos,

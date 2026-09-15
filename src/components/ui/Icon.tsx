@@ -1,4 +1,74 @@
-import { ArrowRight, BookOpen, CalendarDays, ChevronLeft, ChevronRight, Download, ExternalLink, FileText, GraduationCap, HeartHandshake, Leaf, Mail, MapPin, Menu, Phone, Search, ShieldCheck, Users, X, Clock, Play, Quote, Check, Globe, Image as ImageIcon } from "lucide-react";
-const icons = { arrow:ArrowRight, book:BookOpen, calendar:CalendarDays, left:ChevronLeft, right:ChevronRight, download:Download, external:ExternalLink, file:FileText, graduation:GraduationCap, heart:HeartHandshake, leaf:Leaf, mail:Mail, pin:MapPin, menu:Menu, phone:Phone, search:Search, shield:ShieldCheck, users:Users, close:X, clock:Clock, play:Play, quote:Quote, check:Check, globe:Globe, image:ImageIcon };
+import {
+  ArrowRight,
+  BookOpen,
+  CalendarDays,
+  ChevronLeft,
+  ChevronRight,
+  Download,
+  ExternalLink,
+  FileText,
+  GraduationCap,
+  HeartHandshake,
+  Leaf,
+  Mail,
+  MapPin,
+  Menu,
+  Phone,
+  Search,
+  ShieldCheck,
+  Users,
+  X,
+  Clock,
+  Play,
+  Quote,
+  Check,
+  Globe,
+  Image as ImageIcon,
+} from "lucide-react";
+const icons = {
+  arrow: ArrowRight,
+  book: BookOpen,
+  calendar: CalendarDays,
+  left: ChevronLeft,
+  right: ChevronRight,
+  download: Download,
+  external: ExternalLink,
+  file: FileText,
+  graduation: GraduationCap,
+  heart: HeartHandshake,
+  leaf: Leaf,
+  mail: Mail,
+  pin: MapPin,
+  menu: Menu,
+  phone: Phone,
+  search: Search,
+  shield: ShieldCheck,
+  users: Users,
+  close: X,
+  clock: Clock,
+  play: Play,
+  quote: Quote,
+  check: Check,
+  globe: Globe,
+  image: ImageIcon,
+};
 export type IconName = keyof typeof icons;
-export function Icon({name,size=20,className=""}:{name:IconName;size?:number;className?:string}) { const Component=icons[name]; return <Component size={size} strokeWidth={1.6} aria-hidden="true" className={className}/>; }
+export function Icon({
+  name,
+  size = 20,
+  className = "",
+}: {
+  name: IconName;
+  size?: number;
+  className?: string;
+}) {
+  const Component = icons[name];
+  return (
+    <Component
+      size={size}
+      strokeWidth={1.6}
+      aria-hidden="true"
+      className={className}
+    />
+  );
+}

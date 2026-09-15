@@ -3,33 +3,73 @@ import { useState } from "react";
 import type { Locale, ClassSchedule } from "@/types";
 import { messages } from "@/lib/i18n";
 
-export function Schedule({items,locale}:{items:ClassSchedule[];locale:Locale}) {
- const t=messages(locale);
- const [grade,setGrade]=useState(items[0]?.grade||"");
- const [day,setDay]=useState("mon");
- const lessons=items.find(item=>item.grade===grade)?.days[day]||[];
- return <>
-  <div className="schedule-controls">
-   <div className="schedule-control">
-    <label htmlFor="schedule-grade">{t.students.grade}</label>
-    <select id="schedule-grade" value={grade} onChange={e=>setGrade(e.target.value)}>
-     {items.map(item=><option key={item.grade}>{item.grade}</option>)}
-    </select>
-   </div>
-   <div className="schedule-control">
-    <label htmlFor="schedule-day">{t.students.day}</label>
-    <select id="schedule-day" value={day} onChange={e=>setDay(e.target.value)}>
-     {Object.entries(t.students.days).map(([key,name])=><option key={key} value={key}>{name}</option>)}
-    </select>
-   </div>
-  </div>
-  <div className="table-wrap">
-   <table>
-    <caption className="sr-only">{t.students.schedule} {grade}</caption>
-    <thead><tr><th scope="col">№</th><th scope="col">{t.students.time}</th><th scope="col">{t.students.subject}</th><th scope="col">{t.students.room}</th></tr></thead>
-    <tbody>{lessons.map((lesson,index)=><tr key={lesson.time}><td>{index+1}</td><td>{lesson.time}</td><td>{lesson.subject[locale]}</td><td>{lesson.room}</td></tr>)}</tbody>
-   </table>
-  </div>
-  {!lessons.length&&<p role="status">{t.common.empty}</p>}
- </>;
+export function Schedule({
+  items,
+  locale,
+}: {
+  items: ClassSchedule[];
+  locale: Locale;
+}) {
+  const t = messages(locale);
+  const [grade, setGrade] = useState(items[0]?.grade || "");
+  const [day, setDay] = useState("mon");
+  const lessons = items.find((item) => item.grade === grade)?.days[day] || [];
+  return (
+    <>
+      <div className="schedule-controls">
+        <div className="schedule-control">
+          <label htmlFor="schedule-grade">{t.students.grade}</label>
+          <select
+            id="schedule-grade"
+            value={grade}
+            onChange={(e) => setGrade(e.target.value)}
+          >
+            {items.map((item) => (
+              <option key={item.grade}>{item.grade}</option>
+            ))}
+          </select>
+        </div>
+        <div className="schedule-control">
+          <label htmlFor="schedule-day">{t.students.day}</label>
+          <select
+            id="schedule-day"
+            value={day}
+            onChange={(e) => setDay(e.target.value)}
+          >
+            {Object.entries(t.students.days).map(([key, name]) => (
+              <option key={key} value={key}>
+                {name}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+      <div className="table-wrap">
+        <table>
+          <caption className="sr-only">
+            {t.students.schedule} {grade}
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">{t.students.time}</th>
+              <th scope="col">{t.students.subject}</th>
+              <th scope="col">{t.students.room}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {lessons.map((lesson, index) => (
+              <tr key={lesson.time}>
+                <td>{index + 1}</td>
+                <td>{lesson.time}</td>
+                <td>{lesson.subject[locale]}</td>
+                <td>{lesson.room}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {!lessons.length && <p role="status">{t.common.empty}</p>}
+    </>
+  );
 }

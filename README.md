@@ -31,7 +31,7 @@ npm test
 
 GitHub Actions build, ESLint, TypeScript, маршруттар, ички шилтемелер, PDF, меню, издөө, чыпкалар, pagination, форма, FAQ, галерея жана 1920/1440/1024/768/430/375px экрандарын текшерет. Натыйжа Actions бөлүмүндө. Артефакттар: browser-report (скриншоттор менен), school104-source (так resolved package-lock.json менен).
 
-Репозиторийде lockfile жок учурда npm install колдонулат. CI артефактындагы package-lock.json'ду репозиторийге кошкондон кийин CI'ди npm ci'ге которсо болот.
+package-lock.json репозиторийге кошулган. CI npm ci менен ошол так версияларды орнотот. Жергиликтүү чөйрөдө npm install же npm ci колдонсоңуз болот.
 
 ## Түзүм
 
@@ -79,6 +79,7 @@ tests/
 ## Чыныгы мектеп маалыматын киргизүү
 
 `src/data/site.ts`:
+
 - phone: эл аралык форматтагы чыныгы телефон;
 - email: мектеп бекиткен Gmail;
 - address: колдонуучу берген дарек;
@@ -89,6 +90,7 @@ tests/
 1200+, 70+, 40+, 2010 — берилген placeholder сандар. Алар текшерилген факт катары көрсөтүлбөйт. Директордун аты-жөнү жана сүрөтү ойлоп табылган жок. Расписание, жаңылыктар, чогулуштар, кружоктор жана PDF'тер — так белгиленген үлгүлөр.
 
 Мектеп контентти бекитип, чыныгы материалдар кошулгандан кийин гана:
+
 1. бардык demo маалыматтарды алмаштырыңыз;
 2. ар бир материалдын demo белгисин false кылыңыз;
 3. site.ts ичиндеги demoMode=false кылыңыз;
@@ -99,6 +101,7 @@ Demo режиминде robots/noindex иштейт жана sitemap бош. Б�
 ## Жаңылык кошуу
 
 `src/data/news.ts` массивине `NewsItem` кошуңуз:
+
 - уникалдуу id жана slug;
 - title/description/body үчүн kg жана ru;
 - YYYY-MM-DD дата;
@@ -116,16 +119,17 @@ Demo режиминде robots/noindex иштейт жана sitemap бош. Б�
 4. file: `/documents/filename.pdf`. sizeBytes — файлдын чыныгы көлөмү.
 5. demo:false.
 
-Кошулган sample-*.pdf файлдары чыныгы ачылуучу PDF, бирок расмий документ эмес. Ичинде SAMPLE ONLY деп белгиленген.
+Кошулган sample-\*.pdf файлдары чыныгы ачылуучу PDF, бирок расмий документ эмес. Ичинде SAMPLE ONLY деп белгиленген.
 
 ## Сүрөттөр жана видео
 
 Дизайн референстеринин тиркемелери бул иш чөйрөсүндө ачылган жок. Түзүм жана green/gold/white багыты тексттик тапшырма боюнча аткарылды. Баштапкы сүрөттөр Unsplash'тагы иллюстрациялык материалдар, мектеп №104 деп ырасталбайт:
+
 - https://images.unsplash.com/photo-1565734777784-6e89609ed871?ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=80&w=1000
 - https://images.unsplash.com/photo-1509062522246-3755977927d7
 - https://images.unsplash.com/photo-1503676260728-1c00da094a0b
 
-Алар сырткы сүрөт кызматына жеткиликтүүлүктү талап кылат. `next/image` оптимизация, өлчөмдөрдү резервдөө жана lazy loading берет. Сүрөт жүктөлбөсө, alt түшүндүрмөсү бар fallback чыгат.
+Сүрөттөр public/images/ ичине көчүрүлгөн: сайт иштегенде Unsplash кызматына сурам жөнөтүлбөйт. Булактар public/images/ATTRIBUTION.md файлында көрсөтүлгөн. `next/image` оптимизация, өлчөмдөрдү резервдөө жана lazy loading берет. Сүрөт жүктөлбөсө, alt түшүндүрмөсү бар fallback чыгат.
 
 Чыныгы сүрөттөрдү `public/images/` ичине кошуп, `src/data/site.ts` imagery же тиешелүү маалымат файлынын image талаасын `/images/...` кылып өзгөртүңүз. Галерея үчүн `src/data/gallery.ts` колдонулат. Teacher image:null ордуна чыныгы жол жазыңыз.
 
@@ -138,6 +142,7 @@ Demo режиминде robots/noindex иштейт жана sitemap бош. Б�
 ## Spring Boot кошуу — 2-этап
 
 `src/lib/content.ts` ичиндеги ContentRepository компоненттер үчүн бирдей типтелген интерфейс берет. Азыр функциялар локалдык маалыматтарды кайтарат. Кийин:
+
 - getNews → GET /api/news;
 - getNewsBySlug → GET /api/news/{slug};
 - getDocuments → GET /api/documents;
