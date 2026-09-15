@@ -1,12 +1,12 @@
-# Illustration sources
+# Image sources
 
-These are demonstration photographs, not photographs of school №104.
-Replace them with approved school photographs before publishing the official site.
-The original files were downloaded from Unsplash on 2026-09-15.
+The campus photograph is an approved photo of school №104 supplied locally.
+The remaining gallery photographs are demonstration photographs and should be
+replaced with approved school photographs before publishing the official site.
 
 | Local file            | Original source                                              |
 | --------------------- | ------------------------------------------------------------ |
-| school/campus.jpg     | https://images.unsplash.com/photo-1565734777784-6e89609ed871 |
+| school/campus.jpg     | School №104 photo supplied by the site owner                 |
 | gallery/classroom.jpg | https://images.unsplash.com/photo-1509062522246-3755977927d7 |
 | gallery/library.jpg   | https://images.unsplash.com/photo-1503676260728-1c00da094a0b |
 

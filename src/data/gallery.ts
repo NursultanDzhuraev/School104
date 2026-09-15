@@ -6,7 +6,7 @@ export const gallery: GalleryPhoto[] = [
     title: { kg: "Билимге жол", ru: "Дорога к знаниям" },
     category: "school",
     image: imagery.campus,
-    demo: true,
+    demo: false,
   },
   {
     id: "class-work",
@@ -27,7 +27,7 @@ export const gallery: GalleryPhoto[] = [
     title: { kg: "Бирге өткөргөн күн", ru: "День вместе" },
     category: "events",
     image: imagery.campus,
-    demo: true,
+    demo: false,
   },
   {
     id: "team",
@@ -48,7 +48,7 @@ export const gallery: GalleryPhoto[] = [
     title: { kg: "Билим чөйрөсү", ru: "Образовательная среда" },
     category: "school",
     image: imagery.campus,
-    demo: true,
+    demo: false,
   },
   {
     id: "friends",

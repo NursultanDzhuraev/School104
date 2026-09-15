@@ -62,7 +62,7 @@ export default async function Home({ params }: Props) {
           <div className="hero-visual">
             <Photo
               src={imagery.campus}
-              alt={t.common.photoNote}
+              alt={school.name[locale]}
               priority
               sizes="(max-width:768px) 100vw, 55vw"
             />
