@@ -51,6 +51,34 @@ export function ContactInfo({ locale }: { locale: Locale }) {
           <p>{t.contacts.hoursText}</p>
         </section>
       </div>
+      <div>
+        <span className="icon-tile">
+          <Icon name="globe" />
+        </span>
+        <section>
+          <h3>{t.contacts.social}</h3>
+          <div className="social-links">
+            <a
+              href={school.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <Icon name="instagram" />
+              Instagram
+            </a>
+            <a
+              href={school.social.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <Icon name="facebook" />
+              Facebook
+            </a>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

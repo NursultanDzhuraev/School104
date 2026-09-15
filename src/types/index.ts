@@ -22,9 +22,7 @@ export type NewsCategory =
 export type DocumentCategory =
   | "charter"
   | "license"
-  | "orders"
-  | "plan"
-  | "reports";
+  | "orders";
 export interface SchoolDocument {
   id: string;
   title: Localized;

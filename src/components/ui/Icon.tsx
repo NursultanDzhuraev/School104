@@ -6,6 +6,7 @@ import {
   ChevronRight,
   Download,
   ExternalLink,
+  Facebook,
   FileText,
   GraduationCap,
   HeartHandshake,
@@ -24,6 +25,7 @@ import {
   Check,
   Globe,
   Image as ImageIcon,
+  Instagram,
 } from "lucide-react";
 const icons = {
   arrow: ArrowRight,
@@ -33,6 +35,7 @@ const icons = {
   right: ChevronRight,
   download: Download,
   external: ExternalLink,
+  facebook: Facebook,
   file: FileText,
   graduation: GraduationCap,
   heart: HeartHandshake,
@@ -51,6 +54,7 @@ const icons = {
   check: Check,
   globe: Globe,
   image: ImageIcon,
+  instagram: Instagram,
 };
 export type IconName = keyof typeof icons;
 export function Icon({

@@ -35,6 +35,26 @@ export function Footer({ locale }: { locale: Locale }) {
               t.common.notProvided
             )}
           </p>
+          <div className="social-links footer-social">
+            <a
+              href={school.social.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <Icon name="instagram" />
+              Instagram
+            </a>
+            <a
+              href={school.social.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+            >
+              <Icon name="facebook" />
+              Facebook
+            </a>
+          </div>
         </div>
         <div>
           <h3>{t.common.quickLinks}</h3>

@@ -36,28 +36,4 @@ export const documents: SchoolDocument[] = [
     file: "/documents/sample-orders.pdf",
     demo: true,
   },
-  {
-    id: "plan",
-    title: {
-      kg: "Мектептин жылдык планы",
-      ru: "Годовой план школы",
-    },
-    category: "plan",
-    date: "2026-01-15",
-    sizeBytes: 750,
-    file: "/documents/sample-plan.pdf",
-    demo: true,
-  },
-  {
-    id: "reports",
-    title: {
-      kg: "Жылдык отчет",
-      ru: "Годовой отчёт",
-    },
-    category: "reports",
-    date: "2026-01-15",
-    sizeBytes: 753,
-    file: "/documents/sample-reports.pdf",
-    demo: true,
-  },
 ];

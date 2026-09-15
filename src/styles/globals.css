@@ -836,6 +836,37 @@ ol {
   margin-top: 3px;
   color: #d7b571;
 }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--green);
+  font-weight: 700;
+}
+.social-links a:hover {
+  border-color: #c9b176;
+  color: #936e25;
+}
+.footer-social {
+  margin-top: 18px;
+}
+.footer-social a {
+  border-color: #315748;
+  color: #dae5dc;
+}
+.footer-social a:hover {
+  border-color: #d7b571;
+  color: #f1d28f;
+}
 .footer-links {
   display: flex;
   flex-direction: column;
