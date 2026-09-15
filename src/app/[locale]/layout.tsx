@@ -49,7 +49,6 @@ export default async function LocaleLayout({
         {t.common.skip}
       </a>
       <Header locale={locale} entries={entries} />
-      {school.demoMode && <div className="demo-notice">{t.common.demo}</div>}
       <main id="main-content" tabIndex={-1}>
         {children}
       </main>
